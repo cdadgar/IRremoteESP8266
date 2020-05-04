@@ -789,6 +789,10 @@ bool IRrecv::decode(decode_results *results, irparams_t *save,
     DPRINTLN("Attempting Airwell decode");
     if (decodeAirwell(results, offset)) return true;
 #endif  // DECODE_AIRWELL
+#if DECODE_RCA
+    DPRINTLN("Attempting RCA decode");
+    if (decodeRCA(results, offset)) return true;
+#endif  // DECODE_RCA
   // Typically new protocols are added above this line.
   }
 #if DECODE_HASH

@@ -625,6 +625,9 @@
 #ifndef D_STR_RAW
 #define D_STR_RAW "RAW"
 #endif  // D_STR_RAW
+#ifndef D_STR_RCA
+#define D_STR_RCA "RCA"
+#endif  // D_STR_RCA
 #ifndef D_STR_RC5
 #define D_STR_RC5 "RC5"
 #endif  // D_STR_RC5

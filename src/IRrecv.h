@@ -593,6 +593,11 @@ class IRrecv {
                      const uint16_t nbits = kAirwellBits,
                      const bool strict = true);
 #endif  // DECODE_AIRWELL
+#if DECODE_RCA
+  bool decodeRCA(decode_results *results, uint16_t offset = kStartOffset,
+                     const uint16_t nbits = kRCABits,
+                     const bool strict = true);
+#endif  // DECODE_RCA
 };
 
 #endif  // IRRECV_H_

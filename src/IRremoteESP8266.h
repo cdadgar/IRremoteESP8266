@@ -600,6 +600,13 @@
 #define SEND_AIRWELL         _IR_ENABLE_DEFAULT_
 #endif  // SEND_AIRWELL
 
+#ifndef DECODE_RCA
+#define DECODE_RCA           _IR_ENABLE_DEFAULT_
+#endif  // DECODE_RCA
+#ifndef SEND_RCA
+#define SEND_RCA             _IR_ENABLE_DEFAULT_
+#endif  // SEND_RCA
+
 #if (DECODE_ARGO || DECODE_DAIKIN || DECODE_FUJITSU_AC || DECODE_GREE || \
      DECODE_KELVINATOR || DECODE_MITSUBISHI_AC || DECODE_TOSHIBA_AC || \
      DECODE_TROTEC || DECODE_HAIER_AC || DECODE_HITACHI_AC || \
@@ -727,8 +734,9 @@ enum decode_type_t {
   HITACHI_AC3,
   DAIKIN64,
   AIRWELL,
+  RCA,  // 80
   // Add new entries before this one, and update it to point to the last entry.
-  kLastDecodeType = AIRWELL,
+  kLastDecodeType = RCA,
 };
 
 // Message lengths & required repeat values
@@ -866,6 +874,7 @@ const uint16_t kPanasonicAcShortBits = kPanasonicAcStateShortLength * 8;
 const uint16_t kPanasonicAcDefaultRepeat = kNoRepeat;
 const uint16_t kPioneerBits = 64;
 const uint16_t kProntoMinLength = 6;
+const uint16_t kRCABits = 24;
 const uint16_t kRC5RawBits = 14;
 const uint16_t kRC5Bits = kRC5RawBits - 2;
 const uint16_t kRC5XBits = kRC5RawBits - 1;
@@ -954,6 +963,7 @@ const uint8_t  kVestelAcBits = 56;
 #define NEC_BITS                      kNECBits
 #define NIKAI_BITS                    kNikaiBits
 #define PANASONIC_BITS                kPanasonicBits
+#define RCA_BITS                      kRCABits
 #define RC5_BITS                      kRC5Bits
 #define RC5X_BITS                     kRC5XBits
 #define RC6_MODE0_BITS                kRC6Mode0Bits

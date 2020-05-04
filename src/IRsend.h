@@ -573,6 +573,11 @@ class IRsend {
   void sendAirwell(uint64_t data, uint16_t nbits = kAirwellBits,
                    uint16_t repeat = kAirwellMinRepeats);
 #endif
+#if SEND_RCA
+  void sendRCA(uint64_t data, uint16_t nbits = kRCABits,
+               uint16_t repeat = kNoRepeat);
+  uint32_t encodeRCA(uint16_t address, uint16_t command);
+#endif
 
  protected:
 #ifdef UNIT_TEST
